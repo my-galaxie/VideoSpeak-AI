@@ -1,0 +1,22 @@
+{
+  "name": "videospeak-system",
+  "version": "1.0.0",
+  "description": "AI-based video processing system for YouTube transcription and translation to Indian languages",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm start",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "start": "cd server && npm start",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "cd server && npm test",
+    "test:client": "cd client && npm test"
+  },
+  "keywords": ["video", "transcription", "translation", "youtube", "indian-languages", "sarvam-api"],
+  "author": "VideoSpeak Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

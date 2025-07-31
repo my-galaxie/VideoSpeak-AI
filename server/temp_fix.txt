@@ -1,0 +1,1 @@
+"message": "Failed to translate the text. Please try again or check your internet connection.",

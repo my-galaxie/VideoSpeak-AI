@@ -1,0 +1,162 @@
+.language-selector-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.language-label {
+  display: block;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.language-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.language-dropdown.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.language-button {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.language-button:hover:not(:disabled) {
+  border-color: #cbd5e0;
+}
+
+.language-button:focus {
+  outline: none;
+  border-color: #3182ce;
+}
+
+.language-dropdown.open .language-button {
+  border-color: #3182ce;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.selected-language {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.language-name {
+  font-weight: 500;
+  color: #2d3748;
+  font-size: 0.875rem;
+}
+
+.language-native {
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+  color: #718096;
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.language-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid #3182ce;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.language-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.language-option {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.15s ease;
+  text-align: left;
+}
+
+.language-option:hover {
+  background: #f7fafc;
+}
+
+.language-option.selected {
+  background: #ebf8ff;
+  color: #3182ce;
+}
+
+.language-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.language-option .language-name {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.language-option .language-native {
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.language-code {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.dropdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .language-selector-container {
+    max-width: none;
+  }
+
+  .language-dropdown-menu {
+    max-height: 250px;
+  }
+}

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  videospeak-client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3001
+    depends_on:
+      - videospeak-server
+    networks:
+      - videospeak-network
+
+  videospeak-server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - SARVAM_API_KEY=${SARVAM_API_KEY}
+      - CORS_ORIGIN=http://localhost:3000
+    volumes:
+      - ./server/logs:/app/logs
+      - ./server/temp:/app/temp
+    networks:
+      - videospeak-network
+
+networks:
+  videospeak-network:
+    driver: bridge
+
+volumes:
+  logs:
+  temp:

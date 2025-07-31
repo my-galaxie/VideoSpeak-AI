@@ -1,0 +1,174 @@
+.error-display {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-left: 4px solid #e53e3e;
+}
+
+.error-display.network {
+  border-left-color: #3182ce;
+}
+
+.error-display.video {
+  border-left-color: #d69e2e;
+}
+
+.error-display.service {
+  border-left-color: #805ad5;
+}
+
+.error-content {
+  padding: 2rem;
+}
+
+.error-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.error-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.error-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.error-message {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #fed7d7;
+  border-radius: 8px;
+  border: 1px solid #feb2b2;
+}
+
+.error-message p {
+  margin: 0;
+  color: #c53030;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.error-suggestions {
+  margin-bottom: 2rem;
+}
+
+.error-suggestions h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.error-suggestions ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style-type: none;
+}
+
+.error-suggestions li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: #718096;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.error-suggestions li::before {
+  content: '💡';
+  position: absolute;
+  left: -1.25rem;
+  top: 0;
+}
+
+.error-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.retry-button,
+.start-over-button,
+.dismiss-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.retry-button {
+  background: #3182ce;
+  color: white;
+}
+
+.retry-button:hover {
+  background: #2c5282;
+  transform: translateY(-1px);
+}
+
+.start-over-button {
+  background: #38a169;
+  color: white;
+}
+
+.start-over-button:hover {
+  background: #2f855a;
+  transform: translateY(-1px);
+}
+
+.dismiss-button {
+  background: #718096;
+  color: white;
+}
+
+.dismiss-button:hover {
+  background: #4a5568;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .error-display {
+    margin: 1rem;
+  }
+
+  .error-content {
+    padding: 1.5rem;
+  }
+
+  .error-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .error-title {
+    font-size: 1.25rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+
+  .retry-button,
+  .start-over-button,
+  .dismiss-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
